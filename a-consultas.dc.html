@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#14110b;-webkit-font-smoothing:antialiased}
+  ::selection{background:rgba(184,152,90,.3);color:#ece5d6}
+  @keyframes riseA{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+  a{text-decoration:none;color:inherit}
+</style>
+</helmet>
+
+<div style="background:#14110b;color:#ece5d6;font-family:'Hanken Grotesk',sans-serif;min-height:100vh;overflow-x:hidden">
+
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:26px 7vw;background:rgba(20,17,11,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,152,90,.18)">
+    <a href="a-inicio.dc.html" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:26px;color:#cbb079;letter-spacing:.5px">Paulo Gomes</a>
+    <div style="display:flex;gap:38px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:#a59c89">
+      <a href="a-inicio.dc.html" style="transition:color .3s" style-hover="color:#cbb079">Início</a>
+      <a href="a-consultas.dc.html" style="color:#cbb079">Consultoria</a>
+      <a href="a-workshop.dc.html" style="transition:color .3s" style-hover="color:#cbb079">Workshop</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="padding:11vh 7vw 8vh;max-width:980px;margin:0 auto;text-align:center;animation:riseA .9s ease both">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:30px;justify-content:center">
+      <span style="width:46px;height:1px;background:#b8985a"></span>
+      <span style="font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:#b8985a;font-weight:600">Consultoria individual</span>
+      <span style="width:46px;height:1px;background:#b8985a"></span>
+    </div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(44px,6.4vw,86px);line-height:1.04;letter-spacing:-.5px;color:#f3eddf">
+      O Básico que <span style="font-style:italic;font-weight:400;color:#cbb079">Funciona</span>
+    </h1>
+    <p style="margin:30px auto 0;max-width:600px;font-size:19px;line-height:1.72;font-weight:300;color:#b3ab98">
+      Uma conversa de 1h30, por vídeo, para sair com respostas claras sobre o que está travando a sua liderança — e o caminho exato para resolver.
+    </p>
+    <a href="https://go.hotmart.com/M106366096T?dp=1" target="_blank" style="display:inline-flex;align-items:center;gap:10px;margin-top:42px;padding:17px 36px;background:#b8985a;color:#14110b;font-weight:600;font-size:15px;letter-spacing:.05em;transition:background .3s" style-hover="background:#cbb079">Agendar minha sessão →</a>
+  </header>
+
+  <!-- AS TRÊS RESPOSTAS -->
+  <section style="padding:5vh 7vw 11vh;max-width:1200px;margin:0 auto">
+    <p style="text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(24px,3vw,34px);color:#e7e0d0;max-width:760px;margin:0 auto 56px;line-height:1.4">Você sai da sessão com resposta clara e objetiva sobre três perguntas:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(184,152,90,.16);border:1px solid rgba(184,152,90,.16)">
+      <div style="background:#14110b;padding:48px 38px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:400;color:#b8985a;line-height:1">01</div>
+        <p style="margin-top:20px;font-size:18px;line-height:1.6;color:#e7e0d0;font-weight:400">Por que você encontra as dificuldades que encontra na hora de liderar.</p>
+      </div>
+      <div style="background:#14110b;padding:48px 38px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:400;color:#b8985a;line-height:1">02</div>
+        <p style="margin-top:20px;font-size:18px;line-height:1.6;color:#e7e0d0;font-weight:400">Por que você ainda não se livrou disso até hoje.</p>
+      </div>
+      <div style="background:#14110b;padding:48px 38px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:400;color:#b8985a;line-height:1">03</div>
+        <p style="margin-top:20px;font-size:18px;line-height:1.6;color:#e7e0d0;font-weight:400">O que você precisa fazer para resolver isso de uma vez por todas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section style="border-top:1px solid rgba(184,152,90,.16);padding:11vh 7vw;max-width:1000px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:46px">
+      <span style="width:46px;height:1px;background:#b8985a"></span>
+      <span style="font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:#b8985a;font-weight:600">Como funciona</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:34px">
+      <div style="display:flex;gap:26px;align-items:baseline">
+        <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:#cbb079;min-width:42px">i.</span>
+        <p style="font-size:18px;line-height:1.7;font-weight:300;color:#b3ab98">Uma sessão única de <span style="color:#ece5d6">1h30 por vídeo</span> (Google Meet), só você e eu, no horário que combinarmos.</p>
+      </div>
+      <div style="display:flex;gap:26px;align-items:baseline">
+        <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:#cbb079;min-width:42px">ii.</span>
+        <p style="font-size:18px;line-height:1.7;font-weight:300;color:#b3ab98">Trazemos o seu cenário real — equipe, contexto, o que trava. Sem teoria solta: <span style="color:#ece5d6">olhamos o seu caso</span>.</p>
+      </div>
+      <div style="display:flex;gap:26px;align-items:baseline">
+        <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:#cbb079;min-width:42px">iii.</span>
+        <p style="font-size:18px;line-height:1.7;font-weight:300;color:#b3ab98">Você sai com <span style="color:#ece5d6">clareza e um próximo passo concreto</span> — não com mais uma lista de boas intenções.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section style="padding:3vh 7vw 12vh;max-width:1000px;margin:0 auto">
+    <div style="border:1px solid rgba(184,152,90,.32);padding:clamp(40px,6vw,72px);text-align:center;position:relative">
+      <div style="position:absolute;inset:8px;border:1px solid rgba(184,152,90,.12);pointer-events:none"></div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(32px,4.4vw,54px);color:#f3eddf;line-height:1.1">Pronto para enxergar com <span style="font-style:italic;color:#cbb079">clareza?</span></h2>
+      <p style="margin:22px auto 0;max-width:520px;font-size:17px;line-height:1.7;font-weight:300;color:#b3ab98">Agende agora e venha com o seu maior desafio de liderança. Em 1h30, ele fica mais simples do que parece.</p>
+      <a href="https://go.hotmart.com/M106366096T?dp=1" target="_blank" style="display:inline-flex;align-items:center;gap:10px;margin-top:38px;padding:17px 38px;background:#b8985a;color:#14110b;font-weight:600;font-size:15px;letter-spacing:.05em;transition:background .3s" style-hover="background:#cbb079">Agendar minha sessão →</a>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(184,152,90,.16);padding:46px 7vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
+    <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:#cbb079">Paulo Gomes</span>
+    <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#756e5f">paulogomes.space · Desenvolvimento de Lideranças</span>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

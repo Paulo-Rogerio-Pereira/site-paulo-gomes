@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#14110b;-webkit-font-smoothing:antialiased}
+  ::selection{background:rgba(184,152,90,.3);color:#ece5d6}
+  @keyframes riseB{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  a{text-decoration:none;color:inherit}
+</style>
+</helmet>
+
+<div style="background:#14110b;color:#ece5d6;font-family:'Hanken Grotesk',sans-serif;min-height:100vh;overflow-x:hidden;position:relative">
+
+  <!-- MOLDURA -->
+  <div style="position:fixed;inset:16px;border:1px solid rgba(184,152,90,.28);pointer-events:none;z-index:40"></div>
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:30px 7vw;background:#14110b;border-bottom:1px solid rgba(184,152,90,.2)">
+    <a href="b-inicio.dc.html" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:27px;color:#cbb079">Paulo Gomes</a>
+    <div style="display:flex;gap:34px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">
+      <a href="b-inicio.dc.html" style="color:#cbb079;display:flex;gap:8px"><span style="color:#756e5f">01</span>Início</a>
+      <a href="b-consultas.dc.html" style="color:#a59c89;display:flex;gap:8px;transition:color .3s" style-hover="color:#cbb079"><span style="color:#756e5f">02</span>Consultoria</a>
+      <a href="b-workshop.dc.html" style="color:#a59c89;display:flex;gap:8px;transition:color .3s" style-hover="color:#cbb079"><span style="color:#756e5f">03</span>Workshop</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:stretch;padding:8vh 7vw 7vh;max-width:1440px;margin:0 auto">
+    <div style="display:flex;flex-direction:column;justify-content:center;border-left:2px solid #b8985a;padding-left:42px;animation:riseB .8s ease both">
+      <span style="font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#b8985a;font-weight:700;margin-bottom:28px">Paulo Gomes — Desenvolvimento de Lideranças</span>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(46px,6.4vw,88px);line-height:.98;letter-spacing:-1px;color:#f3eddf">
+        Liderança não se improvisa.<br><span style="color:#cbb079">Se estrutura.</span>
+      </h1>
+      <p style="margin-top:30px;max-width:520px;font-size:18px;line-height:1.68;font-weight:300;color:#b3ab98">
+        Mais de 10 anos formando líderes na prática. Eu te entrego o método que falta entre a boa intenção e o resultado da sua equipe.
+      </p>
+      <div style="display:flex;gap:16px;margin-top:40px;flex-wrap:wrap">
+        <a href="b-consultas.dc.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 30px;background:#b8985a;color:#14110b;font-weight:700;font-size:14px;letter-spacing:.04em;transition:background .3s" style-hover="background:#cbb079">Agendar consultoria →</a>
+        <a href="b-workshop.dc.html" style="display:inline-flex;align-items:center;padding:16px 30px;border:1px solid rgba(184,152,90,.45);color:#cbb079;font-weight:600;font-size:14px;letter-spacing:.04em;transition:background .3s" style-hover="background:rgba(184,152,90,.08)">Ver o workshop</a>
+      </div>
+    </div>
+    <div style="position:relative;animation:riseB 1s ease both;min-height:420px">
+      <span style="position:absolute;top:-2px;left:-2px;width:30px;height:30px;border-top:2px solid #b8985a;border-left:2px solid #b8985a;z-index:2"></span>
+      <span style="position:absolute;top:-2px;right:-2px;width:30px;height:30px;border-top:2px solid #b8985a;border-right:2px solid #b8985a;z-index:2"></span>
+      <span style="position:absolute;bottom:-2px;left:-2px;width:30px;height:30px;border-bottom:2px solid #b8985a;border-left:2px solid #b8985a;z-index:2"></span>
+      <span style="position:absolute;bottom:-2px;right:-2px;width:30px;height:30px;border-bottom:2px solid #b8985a;border-right:2px solid #b8985a;z-index:2"></span>
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" hint-size="100%,100%">
+        <image-slot id="paulo-portrait-b" src="paulo.png" style="width:100%;height:100%;min-height:420px;display:block" shape="rect" fit="cover" placeholder="Arraste sua foto profissional aqui"></image-slot>
+      </x-import>
+    </div>
+  </header>
+
+  <!-- TESE -->
+  <section style="border-top:1px solid rgba(184,152,90,.2);padding:9vh 7vw;max-width:1440px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:.4fr 1fr;gap:48px;align-items:start">
+      <span style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b8985a;font-weight:700;padding-top:10px">A tese</span>
+      <p style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,3.4vw,44px);line-height:1.3;color:#e7e0d0">A maioria dos líderes não falha por falta de vontade — falha por falta de método. <span style="color:#cbb079">Eu integro desenvolvimento pessoal e performance profissional</span> para fechar essa lacuna.</p>
+    </div>
+  </section>
+
+  <!-- TRAJETÓRIA -->
+  <section style="border-top:1px solid rgba(184,152,90,.2);padding:9vh 7vw;max-width:1440px;margin:0 auto">
+    <span style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b8985a;font-weight:700">A trajetória</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px;margin-top:46px">
+      <div style="border-top:2px solid #b8985a;padding-top:22px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:600;color:#f3eddf;line-height:1">+10</div>
+        <p style="margin-top:10px;font-size:15px;line-height:1.55;color:#a59c89">anos com liderança — 7 em tecnologia, 3 em vendas</p>
+      </div>
+      <div style="border-top:2px solid #b8985a;padding-top:22px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:600;color:#f3eddf;line-height:1">32</div>
+        <p style="margin-top:10px;font-size:15px;line-height:1.55;color:#a59c89">vendedores liderados em 4 equipes, como coordenador</p>
+      </div>
+      <div style="border-top:2px solid #b8985a;padding-top:22px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:600;color:#f3eddf;line-height:1">~120</div>
+        <p style="margin-top:10px;font-size:15px;line-height:1.55;color:#a59c89">pessoas no comercial em que atuo com mais 5 pares</p>
+      </div>
+      <div style="border-top:2px solid #b8985a;padding-top:22px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:600;color:#f3eddf;line-height:1">3</div>
+        <p style="margin-top:10px;font-size:15px;line-height:1.55;color:#a59c89">anos imerso em desenvolvimento pessoal, sem meio-termo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTAS -->
+  <section style="border-top:1px solid rgba(184,152,90,.2);padding:9vh 7vw 11vh;max-width:1440px;margin:0 auto">
+    <span style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#b8985a;font-weight:700">Trabalhe comigo</span>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px;border:1px solid rgba(184,152,90,.2)">
+      <a href="b-consultas.dc.html" style="display:flex;flex-direction:column;padding:48px 44px;border-right:1px solid rgba(184,152,90,.2);transition:background .35s" style-hover="background:#1b1710">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#b8985a;font-weight:700">Consultoria individual</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#756e5f;font-size:26px">02</span>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:38px;color:#f3eddf;margin-top:20px;line-height:1.1">O Básico que Funciona</h3>
+        <p style="margin-top:14px;font-size:16px;line-height:1.6;font-weight:300;color:#a59c89;flex:1">1h30 por vídeo, direto ao ponto: por que você trava, por que ainda não resolveu e o que fazer agora.</p>
+        <span style="margin-top:26px;font-size:13px;letter-spacing:.08em;color:#cbb079;font-weight:600">Agendar sessão →</span>
+      </a>
+      <a href="b-workshop.dc.html" style="display:flex;flex-direction:column;padding:48px 44px;transition:background .35s" style-hover="background:#1b1710">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#b8985a;font-weight:700">Workshop digital</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#756e5f;font-size:26px">03</span>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:38px;color:#f3eddf;margin-top:20px;line-height:1.1">Feedback &amp; PDI</h3>
+        <p style="margin-top:14px;font-size:16px;line-height:1.6;font-weight:300;color:#a59c89;flex:1">O método passo a passo de feedback e PDI, com checklists prontos e uma sessão estratégica de bônus.</p>
+        <span style="margin-top:26px;font-size:13px;letter-spacing:.08em;color:#cbb079;font-weight:600">Ver o workshop →</span>
+      </a>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(184,152,90,.2);padding:42px 7vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px">
+    <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:#cbb079">Paulo Gomes</span>
+    <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#756e5f">paulogomes.space · Desenvolvimento de Lideranças</span>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

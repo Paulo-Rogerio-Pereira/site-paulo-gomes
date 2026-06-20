@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{-webkit-font-smoothing:antialiased}
+  ::selection{background:rgba(184,152,90,.3);color:#ece5d6}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  a{text-decoration:none;color:inherit}
+</style>
+</helmet>
+
+<div style="{{ pageStyle }}">
+
+  <header style="text-align:center;padding:9vh 7vw 5vh;animation:rise .8s ease both">
+    <div style="{{ sigStyle }}">Paulo Gomes</div>
+    <h1 style="{{ h1Style }}">Duas direções de design</h1>
+    <p style="{{ introStyle }}">Mesmo sistema — escuro, dourado fosco, Cormorant Garamond. Escolha a linguagem que mais combina com você. Cada uma tem as três páginas completas.</p>
+  </header>
+
+  <main style="flex:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:28px;padding:0 7vw 8vh;max-width:1280px;margin:0 auto;width:100%">
+
+    <!-- A -->
+    <a href="a-inicio.dc.html" style="{{ cardAStyle }}" style-hover="{{ cardHover }}">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <span style="{{ labelAStyle }}">Direção A</span>
+        <span style="{{ dimStyle }}">a</span>
+      </div>
+      <h2 style="{{ headAStyle }}">Editorial <span style="{{ accentItalStyle }}">Sereno</span></h2>
+      <p style="{{ bodyStyle }}">Muito ar, manchetes leves em itálico, fios dourados finíssimos. Tom contemplativo e refinado — luxo discreto.</p>
+      <div style="display:flex;gap:10px;margin-top:28px;flex-wrap:wrap">
+        <span style="{{ chipStyle }}">Centrado</span>
+        <span style="{{ chipStyle }}">Leve</span>
+        <span style="{{ chipStyle }}">Sereno</span>
+      </div>
+      <span style="{{ arrowStyle }}">Ver direção A →</span>
+    </a>
+
+    <!-- B -->
+    <a href="b-inicio.dc.html" style="{{ cardBStyle }}" style-hover="{{ cardHover }}">
+      <span style="{{ brTL }}"></span>
+      <span style="{{ brBR }}"></span>
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <span style="{{ labelBStyle }}">Direção B</span>
+        <span style="{{ dimStyle }}">b</span>
+      </div>
+      <h2 style="{{ headBStyle }}">Estrutura <span style="{{ accentStyle }}">Confiante</span></h2>
+      <p style="{{ bodyStyle }}">Grid, seções numeradas, moldura e colchetes dourados. Hierarquia forte e copy direta — autoridade de consultor.</p>
+      <div style="display:flex;gap:10px;margin-top:28px;flex-wrap:wrap">
+        <span style="{{ chipStyle }}">Estruturado</span>
+        <span style="{{ chipStyle }}">Forte</span>
+        <span style="{{ chipStyle }}">Direto</span>
+      </div>
+      <span style="{{ arrowStyle }}">Ver direção B →</span>
+    </a>
+
+  </main>
+
+  <footer style="{{ footerStyle }}">paulogomes.space · Desenvolvimento de Lideranças</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;atmosfera&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Noite Dourada&quot;, &quot;Carvão Frio&quot;, &quot;Pergaminho&quot;], &quot;default&quot;: &quot;Noite Dourada&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;dourado&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Bronze Fosco&quot;, &quot;Champagne&quot;, &quot;Âmbar&quot;], &quot;default&quot;: &quot;Bronze Fosco&quot;, &quot;tsType&quot;: &quot;string&quot; },
+  &quot;ornamento&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot; }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const atmos = this.props.atmosfera ?? 'Noite Dourada';
+    const goldKey = this.props.dourado ?? 'Bronze Fosco';
+    const ornamento = this.props.ornamento ?? true;
+    const HG = "'Hanken Grotesk', sans-serif";
+    const CG = "'Cormorant Garamond', serif";
+
+    const P = {
+      'Noite Dourada': { pageBg:'#0f0d08', cardBg:'#14110b', heading:'#f3eddf', body:'#a59c89', dim:'#756e5f', line:'rgba(184,152,90,.2)', lineStrong:'rgba(184,152,90,.6)', chipLine:'rgba(184,152,90,.25)' },
+      'Carvão Frio':   { pageBg:'#0c0e11', cardBg:'#13161a', heading:'#eef1f4', body:'#98a0a8', dim:'#5d6670', line:'rgba(170,176,186,.16)', lineStrong:'rgba(205,210,220,.42)', chipLine:'rgba(170,176,186,.22)' },
+      'Pergaminho':    { pageBg:'#ece3d0', cardBg:'#f6efe1', heading:'#2c2114', body:'#6f624c', dim:'#b0a184', line:'rgba(90,68,38,.22)', lineStrong:'rgba(90,68,38,.5)', chipLine:'rgba(90,68,38,.28)' }
+    }[atmos];
+
+    let g = {
+      'Bronze Fosco': { gold:'#b8985a', soft:'#cbb079' },
+      'Champagne':     { gold:'#c6aa70', soft:'#ddc591' },
+      'Âmbar':         { gold:'#c2884a', soft:'#d6a25c' }
+    }[goldKey];
+    if (atmos === 'Pergaminho') {
+      g = {
+        'Bronze Fosco': { gold:'#8a6a2e', soft:'#9c7a38' },
+        'Champagne':     { gold:'#94762a', soft:'#a98731' },
+        'Âmbar':         { gold:'#9a6320', soft:'#b07a2c' }
+      }[goldKey];
+    }
+    const gold = g.gold, soft = g.soft;
+
+    const cardBase = { display:'flex', flexDirection:'column', padding:'48px 44px', transition:'border-color .35s, transform .35s', background:P.cardBg, border:'1px solid ' + P.line };
+    const head = { marginTop:'18px', fontFamily:CG, fontSize:'46px', lineHeight:1.05, color:P.heading };
+    const label = { fontSize:'12px', letterSpacing:'.28em', textTransform:'uppercase', color:gold };
+    const corner = { position:'absolute', width:'22px', height:'22px', display: ornamento ? 'block' : 'none' };
+
+    return {
+      pageStyle:    { background:P.pageBg, color:P.body, fontFamily:HG, minHeight:'100vh', display:'flex', flexDirection:'column' },
+      sigStyle:     { fontFamily:CG, fontStyle:'italic', fontWeight:500, fontSize:'30px', color:soft },
+      h1Style:      { marginTop:'24px', fontFamily:CG, fontWeight:300, fontSize:'clamp(34px,5vw,60px)', lineHeight:1.1, color:P.heading },
+      introStyle:   { margin:'20px auto 0', maxWidth:'560px', fontSize:'17px', lineHeight:1.66, fontWeight:300, color:P.body },
+
+      cardAStyle:   { ...cardBase, animation:'rise 1s ease both' },
+      cardBStyle:   { ...cardBase, animation:'rise 1.15s ease both', position:'relative' },
+      cardHover:    { borderColor:P.lineStrong, transform:'translateY(-5px)' },
+
+      labelAStyle:  { ...label, fontWeight:600 },
+      labelBStyle:  { ...label, fontWeight:700 },
+      dimStyle:     { fontFamily:CG, fontStyle:'italic', fontSize:'30px', color:P.dim },
+
+      headAStyle:   { ...head, fontWeight:300 },
+      headBStyle:   { ...head, fontWeight:600 },
+      accentStyle:  { color:soft },
+      accentItalStyle: { fontStyle:'italic', color:soft },
+
+      bodyStyle:    { marginTop:'18px', fontSize:'16px', lineHeight:1.66, fontWeight:300, flex:1, color:P.body },
+      chipStyle:    { fontSize:'11px', letterSpacing:'.1em', textTransform:'uppercase', padding:'6px 12px', color:P.body, border:'1px solid ' + P.chipLine },
+      arrowStyle:   { marginTop:'30px', fontSize:'13px', letterSpacing:'.08em', fontWeight:600, color:soft },
+      footerStyle:  { padding:'34px 7vw', textAlign:'center', fontSize:'12px', letterSpacing:'.16em', textTransform:'uppercase', borderTop:'1px solid ' + P.line, color:P.dim },
+
+      brTL:         { ...corner, top:'14px', left:'14px', borderTop:'2px solid ' + gold, borderLeft:'2px solid ' + gold },
+      brBR:         { ...corner, bottom:'14px', right:'14px', borderBottom:'2px solid ' + gold, borderRight:'2px solid ' + gold }
+    };
+  }
+}
+</script>
+</body>
+</html>
